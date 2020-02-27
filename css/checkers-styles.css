@@ -36,8 +36,8 @@ h2 {
   width: 1216px;
 }
 
- .square {
-   border: 1px solid rgba(0, 0, 0, 0.75);
+ .oak {
+   border: 0px solid rgba(0, 0, 0, 0.75);
    font-size: 96px;
    height: 150px;
    line-height: 150px;
@@ -45,7 +45,16 @@ h2 {
    width: 150px;
  }
 
-.square:hover {
+ .acacia {
+   border: 0px solid rgba(0, 0, 0, 0.75);
+   font-size: 96px;
+   height: 150px;
+   line-height: 150px;
+   user-select: none;
+   width: 150px;
+ }
+
+.oak:hover, .acacia:hover {
   background-repeat: no-repeat;
   background-position: center;
   background-color: #fada89;
