@@ -4,9 +4,6 @@
 let board;
 let turn;
 let win;
-let oWin = 0;
-let xWin = 0;
-let ties = 0;
 
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"));
@@ -52,7 +49,7 @@ function takeTurn(e) {
 
     if (board[index] === "") {
       board[index] = turn;
-      turn = turn === "X" ? "O" : "X";
+      turn = turn === "green" ? "pink" : "green";
       win = getWinner();
       render();
     }
