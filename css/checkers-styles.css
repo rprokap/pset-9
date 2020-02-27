@@ -61,7 +61,7 @@ h2 {
 .oak:hover, .acacia:hover {
   background-repeat: no-repeat;
   background-position: center;
-  opacity:0.5;
+  opacity: 0.5;
   cursor: pointer;
 }
 
