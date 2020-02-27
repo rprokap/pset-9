@@ -25,49 +25,21 @@ const message = document.querySelector("h2");
 ///////////////////// EVENT LISTENERS ///////////////////////////////
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
-document.getElementById("reset-button").onclick = init;
-document.getElementById("o-button").onclick = oStart;
-document.getElementById("score-reset").onclick = resetScore;
 ///////////////////// FUNCTIONS /////////////////////////////////////
-function resetScore() {
-  oWin = 0;
-  document.getElementById("o-wins").innerHTML = "o's wins: " + oWin;
-  xWin = 0;
-  document.getElementById("x-wins").innerHTML = "x's wins: " + xWin;
-  ties = 0;
-  document.getElementById("tie").innerHTML = "ties: " + ties;
-}
 
 function init() {
   board = [
-    "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "", 
+    "p", "g", "p", "g", "p", "g", "p", "g",
+    "g", "p", "g", "p", "g", "p", "g", "p",
+    "p", "g", "p", "g", "p", "g", "p", "g",
+    "g", "p", "g", "p", "g", "p", "g", "p",
+    "p", "g", "p", "g", "p", "g", "p", "g",
+    "g", "p", "g", "p", "g", "p", "g", "p",
+    "p", "g", "p", "g", "p", "g", "p", "g",
+    "g", "p", "g", "p", "g", "p", "g", "p",
   ];
 
   turn = "X";
-  win = null;
-
-  render();
-}
-
-function oStart() {
-  board = [
-    "", "", "",
-    "", "", "",
-    "", "", ""
-  ];
-
-  turn = "O";
   win = null;
 
   render();
@@ -92,17 +64,6 @@ function takeTurn(e) {
       board[index] = turn;
       turn = turn === "X" ? "O" : "X";
       win = getWinner();
-      if (win == "X") {
-        xWin ++;
-        document.getElementById("x-wins").innerHTML = "x's wins: " + xWin;
-      } else if (win == "O") {
-        oWin ++;
-        document.getElementById("o-wins").innerHTML = "o's wins: " + oWin;
-      } else if (win == "T") {
-        ties ++;
-        document.getElementById("tie").innerHTML = "ties: " + ties;
-      }
-
       render();
     }
   }
