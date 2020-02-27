@@ -38,6 +38,8 @@ h2 {
 
  .oak {
    border: 0px solid rgba(0, 0, 0, 0.75);
+   background-image: url("../images/dark-oak.png");
+   background-size: cover;
    font-size: 96px;
    height: 150px;
    line-height: 150px;
@@ -47,6 +49,8 @@ h2 {
 
  .acacia {
    border: 0px solid rgba(0, 0, 0, 0.75);
+   background-image: url("../images/acacia.png");
+   background-size: cover;
    font-size: 96px;
    height: 150px;
    line-height: 150px;
@@ -57,8 +61,7 @@ h2 {
 .oak:hover, .acacia:hover {
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #fada89;
-  background-image: url("../images/tictac.png");
+  opacity:0.5;
   cursor: pointer;
 }
 
