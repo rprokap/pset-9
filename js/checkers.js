@@ -1,7 +1,9 @@
 ///////////////////// CONSTANTS /////////////////////////////////////
 
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
-let board;
+let board [];
+let greenChild [];
+let miencratfGood [];
 let turn;
 let win;
 
@@ -15,9 +17,6 @@ document.getElementById("board").onclick = takeTurn;
 ///////////////////// FUNCTIONS /////////////////////////////////////
 
 function init() {
-  board = []
-  ];
-
   turn = "g";
   win = null;
 

@@ -18,6 +18,15 @@ h2 {
   margin: 2%;
 }
 
+ul {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+li{
+  display: inline;
+}
+
 .container {
   display: flex;
   justify-content: center;
