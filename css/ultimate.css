@@ -25,14 +25,13 @@ body {
 }
 
  .square {
-   border: 1px solid rgba(0, 0, 0, 0.75);
-   font-size: 48px;
-   text-align: center;
-   display: inline-block;
-   height: 69px;
-   line-height: 150px;
+   border: 1px solid white;
+   height: 150px;
    user-select: none;
-   width: 69px;
+   width: 150px;
+   font-size: 96px;
+   line-height: 150px;
+
  }
 
 .square:hover {
