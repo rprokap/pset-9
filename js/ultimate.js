@@ -1,4 +1,15 @@
 ///////////////////// CONSTANTS /////////////////////////////////////
+const ultimateWinningConditions = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6]
+];
+
 const winningConditions = [
   [0, 1, 2],
   [3, 4, 5],
@@ -26,14 +37,6 @@ document.getElementById("reset-button").onclick = init;
 document.getElementById("o-button").onclick = oStart;
 document.getElementById("score-reset").onclick = resetScore;
 ///////////////////// FUNCTIONS /////////////////////////////////////
-function resetScore() {
-  oWin = 0;
-  document.getElementById("o-wins").innerHTML = "o's wins: " + oWin;
-  xWin = 0;
-  document.getElementById("x-wins").innerHTML = "x's wins: " + xWin;
-  ties = 0;
-  document.getElementById("tie").innerHTML = "ties: " + ties;
-}
 
 function init() {
   board = [
