@@ -46,19 +46,25 @@ li{
 }
 
  .square {
-   border: 1px solid rgba(0, 0, 0, 0.75);
+   border: 1px solid orange;
    font-size: 96px;
+   color: orange;
    height: 150px;
    line-height: 150px;
    user-select: none;
    width: 150px;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-image: url("../images/dark-oak.png");
+   background-size: cover;
  }
 
 .square:hover {
   background-repeat: no-repeat;
   background-position: center;
   background-color: #fada89;
-  background-image: url("../images/tictac.png");
+  background-image: url("../images/tictac-minecraft.png");
+  background-size: cover;
   cursor: pointer;
 }
 
