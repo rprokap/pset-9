@@ -1,0 +1,144 @@
+* {
+  font-family: "Comic Sans MS", sans-serif;
+}
+
+body {
+  text-align: center;
+}
+
+h1 {
+  margin: 0 auto;
+  font-size: 48px;
+  margin: 2%;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: lighter;
+  margin: 2%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+  height: 456px;
+  width: 456px;
+}
+
+ .square {
+   border: 1px solid rgba(0, 0, 0, 0.75);
+   font-size: 96px;
+   height: 150px;
+   line-height: 150px;
+   user-select: none;
+   width: 150px;
+ }
+
+.square:hover {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fada89;
+  background-image: url("../images/tictac.png");
+  cursor: pointer;
+}
+
+#footer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#o-wins {
+  background-color: #e096c6;
+  border: 1px solid #eb34b1;
+  color: #2c3d3c;
+  font-size: 14px;
+  line-height: 250%;
+  text-align: center;
+  width: 33%;
+}
+
+#x-wins {
+  background-color: #96e0d9;
+  border: 1px solid #31bdbd;
+  color: #2c3d3c;
+  font-size: 14px;
+  line-height: 250%;
+  margin: 1%;
+  text-align: center;
+  width: 33%;
+}
+
+#tie {
+  position: absolute;
+  right: 0px;
+  background-color: #fada89;
+  border: 1px solid #eba534;
+  color: #2c3d3c;
+  font-size: 14px;
+  line-height: 250%;
+  text-align: center;
+  width: 33%;
+}
+
+#reset-button {
+  background-color: white;
+  border: 1px solid #31bdbd;
+  color: #2c3d3c;
+  font-size: 21px;
+  line-height: 55px;
+  margin: 1%;
+  text-align: center;
+  width: 456px;
+  background-color: #96e0d9;
+}
+
+ #o-button {
+   background-color: white;
+   border: 1px solid #c4339b;
+   color: #2c3d3c;
+   font-size: 21px;
+   line-height: 55px;
+   margin: 1%;
+   text-align: center;
+   width: 456px;
+   background-color: #e096c6;
+ }
+
+#reset-button:hover {
+  background-color: #41adb0;
+  color: #96e0d9;
+  cursor: pointer;
+}
+
+  #o-button:hover {
+  background-color: #cc50af;
+  color: #e096c6;
+  cursor: pointer;
+}
+
+#score-reset {
+  border: 1px solid #f5be78;
+  text-align: center;
+  color: #2c3d3c;
+  background-color: #8bc5f7;
+  margin: 1%;
+  width: 60%;
+  height: 40px;
+  font-size: 28px;
+}
+
+#score-reset:hover {
+  color: #fad38c;
+  background-color: #fa89cf;
+}
