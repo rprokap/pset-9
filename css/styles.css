@@ -74,9 +74,9 @@ li{
 }
 
 #o-wins {
-  background-color: #e096c6;
-  border: 1px solid #eb34b1;
-  color: #2c3d3c;
+  background-color: #c7c7c7;
+  border: 1px solid #e87c7d;
+  color: #e87c7d;
   font-size: 14px;
   line-height: 250%;
   text-align: center;
@@ -84,9 +84,9 @@ li{
 }
 
 #x-wins {
-  background-color: #96e0d9;
-  border: 1px solid #31bdbd;
-  color: #2c3d3c;
+  background-color: #00abab;
+  border: 1px solid #312876;
+  color: #312876;
   font-size: 14px;
   line-height: 250%;
   margin: 1%;
@@ -97,9 +97,9 @@ li{
 #tie {
   position: absolute;
   right: 0px;
-  background-color: #fada89;
-  border: 1px solid #eba534;
-  color: #2c3d3c;
+  background-color: #e87c7d;
+  border: 1px solid #c7c7c7;
+  color: #c7c7c7;
   font-size: 14px;
   line-height: 250%;
   text-align: center;
@@ -143,8 +143,8 @@ li{
 #score-reset {
   border: 1px solid #f5be78;
   text-align: center;
-  color: #2c3d3c;
-  background-color: #8bc5f7;
+  color: #00abab;
+  background-color: #312876;
   margin: 1%;
   width: 50%;
   height: 40px;
@@ -152,6 +152,7 @@ li{
 }
 
 #score-reset:hover {
-  color: #fad38c;
-  background-color: #fa89cf;
+  background-color: rgb(197,113,69);
+  color: #492f17;
+  border: 1px solid #492f17;
 }
