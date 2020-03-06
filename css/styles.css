@@ -1,5 +1,5 @@
 * {
-  font-family: "Comic Sans MS", sans-serif;
+  font-family: "MinecraftiaRegular", sans-serif;
 }
 
 body {
@@ -46,9 +46,9 @@ li{
 }
 
  .square {
-   border: 1px solid orange;
+   border: 1px solid #e8691b;
    font-size: 96px;
-   color: orange;
+   color: #e8691b;
    height: 150px;
    line-height: 150px;
    user-select: none;
@@ -107,38 +107,36 @@ li{
 }
 
 #reset-button {
-  background-color: white;
-  border: 1px solid #31bdbd;
-  color: #2c3d3c;
+  border: 1px solid #e8691b;
+  color: #c7c7c7;
   font-size: 21px;
   line-height: 55px;
   margin: 1%;
   text-align: center;
   width: 456px;
-  background-color: #96e0d9;
+  background-color: #e87c7d;
 }
 
  #o-button {
-   background-color: white;
-   border: 1px solid #c4339b;
-   color: #2c3d3c;
+   border: 1px solid brown;
+   color: #312876;
    font-size: 21px;
    line-height: 55px;
    margin: 1%;
    text-align: center;
    width: 456px;
-   background-color: #e096c6;
+   background-color: #00abab;
  }
 
 #reset-button:hover {
-  background-color: #41adb0;
-  color: #96e0d9;
+  background-color: #c7c7c7;
+  color: #e87c7d;
   cursor: pointer;
 }
 
   #o-button:hover {
-  background-color: #cc50af;
-  color: #e096c6;
+  background-color: #312876;
+  color: #00abab;
   cursor: pointer;
 }
 
@@ -148,7 +146,7 @@ li{
   color: #2c3d3c;
   background-color: #8bc5f7;
   margin: 1%;
-  width: 60%;
+  width: 50%;
   height: 40px;
   font-size: 28px;
 }
