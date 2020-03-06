@@ -133,7 +133,6 @@ window.onload = init;
 document.getElementById("board").onclick = takeTurn;
 document.getElementById("reset-button").onclick = init;
 document.getElementById("o-button").onclick = oStart;
-document.getElementById("score-reset").onclick = resetScore;
 ///////////////////// FUNCTIONS /////////////////////////////////////
 
 function init() {
