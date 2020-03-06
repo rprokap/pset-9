@@ -3,7 +3,7 @@ const WHOSJOE = "joe mama";
 
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 let board [];
-let greenChild [];
+let gChild [];
 let miencratfGood [];
 let turn;
 let win;
@@ -18,11 +18,22 @@ const message = document.querySelector("h2");
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
 ///////////////////// FUNCTIONS /////////////////////////////////////
-
+let board = [
+  ["","g", "", "g", "", "g", "", "g"],
+  ["g", "", "g", "", "g", "", "g", ""],
+  ["","g", "", "g", "", "g", "", "g"],
+  ["","", "", "", "", "", "", ""],
+  ["","", "", "", "", "", "", ""],
+  ["p","", "p", "", "p", "", "p", ""],
+  ["", "p","", "p", "", "p", "", "p"],
+  ["p","", "p", "", "p", "", "p", ""],
+];
 // function checkersCircleThing {
 //   [piece garbage]
 // }
-///tic-tac-toe code///
+
+
+///TIC-TAC-TOE CODE///
 // function init() {
 //   turn = "g";
 //   win = null;
@@ -47,7 +58,7 @@ document.getElementById("board").onclick = takeTurn;
 //
 //     if (board[index] === "") {
 //       board[index] = turn;
-//       turn = turn === "green" ? "pink" : "green";
+//       turn = turn === "g" ? "pink" : "g";
 //       win = getWinner();
 //       render();
 //     }
