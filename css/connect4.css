@@ -21,14 +21,16 @@ h2 {
 .square {
   height: 100px;
   width: 100px;
-  background-color: white;
   border-radius: 50%;
   display: inline-block;
-  line-height: 175px;
+  line-height: 169px;
   text-align: center;
   vertical-align: middle;
-  line-height: 100px
-
+  line-height: 100px;
+  background-image: url("../images/acacia.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .wrap {
@@ -58,18 +60,6 @@ h2 {
   background-color: rgba(232, 124, 125, 0.5);
   color: transparent;
 }
-/* 
-.first {
-  border: 1px solid;
-  font-size: 46px;
-  height: 90px;
-  line-height: 100px;
-  user-select: none;
-  width: 110px;
-  margin: 5%;
-  border-radius: 50%;
-  color: white;
-} */
 
 #board {
   background-image: url("../images/dark-oak.png");
@@ -85,17 +75,17 @@ h2 {
 
 #reset-button {
   border: 1px solid #e8691b;
-  color: #c7c7c7;
   font-size: 21px;
   line-height: 55px;
   margin: 1%;
   text-align: center;
   width: 456px;
-  background-color: #e87c7d;
+  background-color: #c7c7c7;
+  color: #e87c7d;
 }
 
 #reset-button:hover {
-  background-color: #c7c7c7;
-  color: #e87c7d;
+  background-color: #e87c7d;
+  color: #c7c7c7;
   cursor: pointer;
 }
