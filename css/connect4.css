@@ -25,6 +25,8 @@ h2 {
   border-style: solid;
   justify-content: center;
   padding: 20px;
+  background-image: url("../images/dark-oak.png");
+  background-size: cover;
 }
 
 .container {
@@ -39,23 +41,35 @@ h2 {
 	flex-direction: column;
 }
 
-.squares {
-  	border: 1px solid rgba(0, 0, 0, 0.75);
+.square {
+  	border: 1px solid orange;
   	height: 100px;
   	user-select: none;
   	width: 100px;
     border-radius: 50px;
     margin: 3px 3px;
-    background-color: white;
+    background-image: url("../images/acacia.png");
+    background-size: cover;
 }
 
+/* .square:hover {
+  background-image: url("../images/tictac.png");
+  	background-color: rgba(232, 124, 125, 0.5);
+} */
+
 #reset-button {
-	background-color: white;
-	border: 1px solid black;
-	color: black;
-	font-size: 21px;
-	line-height: 55px;
-	margin: 1%;
-	text-align: center;
-	width: 456px;
+  border: 1px solid #e8691b;
+  color: #c7c7c7;
+  font-size: 21px;
+  line-height: 55px;
+  margin: 1%;
+  text-align: center;
+  width: 456px;
+  background-color: #e87c7d;
+}
+
+#reset-button:hover {
+  background-color: #c7c7c7;
+  color: #e87c7d;
+  cursor: pointer;
 }
