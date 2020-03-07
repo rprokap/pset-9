@@ -12,174 +12,66 @@ h1 {
   margin: 2%;
 }
 
-/* h2 {
-  font-size: 36px;
-  font-weight: lighter;
-  margin: 2%;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-.column {
-  height: 100%;
-  width: 100%;
-  flex-direction: column;
-}
-
-/* .wrap {
-  flex-wrap: wrap;
-  height: 1216px;
-  width: 1216px;
-} */
-
 #board {
   position: absolute;
-  width: 420px;
-  height: 420px;
-  border-radius: 1px;
-}
-
-#board .square {
-  width: 6.9px;
-  height: 6.9px;
-  background-image: url("../images/dark-oak.png");
-  background-size: cover;
-}
-
-#board .gpieces {
-  position: absolute;
-  width: 4.20px;
-  height: 4.20px;
-  background-image: url("../images/zombie.png");
-  background-size: cover;
-}
-
-#board .ppieces {
-  position: absolute;
-  width: 4.20px;
-  height: 4.20px;
-  background-image: url("../images/pigman.png");
-  background-size: cover;
-}
- /* .oak {
-   border: 0px solid rgba(0, 0, 0, 0.75);
-   background-image: url("../images/dark-oak.png");
-   background-size: cover;
-   font-size: 96px;
-   height: 150px;
-   line-height: 150px;
-   user-select: none;
-   width: 150px;
- }
-
- .acacia {
-   border: 0px solid rgba(0, 0, 0, 0.75);
-   background-image: url("../images/acacia.png");
-   background-size: cover;
-   font-size: 96px;
-   height: 150px;
-   line-height: 150px;
-   user-select: none;
-   width: 150px;
- }
-
-.oak:hover, .acacia:hover {
+  top: calc(50% - 42.0vmin);
+  left: calc(50% - 42.0vmin);
+  width: 80vmin;
+  height: 80vmin;
+  background-image: url("../images/acacia.png");
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.5;
-  cursor: pointer;
-}
-
-#footer {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-#o-wins {
-  background-color: #e096c6;
-  border: 1px solid #eb34b1;
-  color: #2c3d3c;
-  font-size: 14px;
-  line-height: 250%;
-  text-align: center;
-  width: 33%;
-}
-
-#x-wins {
-  background-color: #96e0d9;
-  border: 1px solid #31bdbd;
-  color: #2c3d3c;
-  font-size: 14px;
-  line-height: 250%;
-  margin: 1%;
-  text-align: center;
-  width: 33%;
-}
-
-#tie {
-  position: absolute;
-  right: 0px;
-  background-color: #fada89;
-  border: 1px solid #eba534;
-  color: #2c3d3c;
-  font-size: 14px;
-  line-height: 250%;
-  text-align: center;
-  width: 33%;
-}
-
-#reset-button {
-  background-color: white;
-  border: 1px solid #31bdbd;
-  color: #2c3d3c;
-  font-size: 21px;
-  line-height: 55px;
-  margin: 1%;
-  text-align: center;
-  width: 456px;
-  background-color: #96e0d9;
-}
-
- #o-button {
-   background-color: white;
-   border: 1px solid #c4339b;
-   color: #2c3d3c;
-   font-size: 21px;
-   line-height: 55px;
-   margin: 1%;
-   text-align: center;
-   width: 456px;
-   background-color: #e096c6;
+  background-size: cover;
  }
 
-#reset-button:hover {
-  background-color: #41adb0;
-  color: #96e0d9;
+.tile {
+  width: 10vmin;
+  height: 10vmin;
+  position: absolute;
+  background-image: url("../images/dark-oak.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.player1pieces .piece {
+  position: absolute;
+  width: 8vmin;
+  height: 8vmin;
+  background-image: url("../images/pigman.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 6vmin;
+  margin-top: 1vmin;
+  margin-left: 1vmin;
   cursor: pointer;
 }
 
-  #o-button:hover {
-  background-color: #cc50af;
-  color: #e096c6;
+div#board .player1pieces .piece.selected {
+  box-shadow: 0 0 10px 5px orange;
+}
+
+.player2pieces .piece {
+  position: absolute;
+  width: 8vmin;
+  height: 8vmin;
+  background-image: url("../images/zombie.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 6vmin;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top: 1vmin;
+  margin-left: 1vmin;
   cursor: pointer;
-}
+  }
 
-#score-reset {
-  border: 1px solid #f5be78;
-  text-align: center;
-  color: #2c3d3c;
-  background-color: #8bc5f7;
-  margin: 1%;
-  width: 60%;
-  height: 40px;
-  font-size: 28px;
+#board .player2pieces .piece.selected {
+      box-shadow: 0 0 10px 5px orange;
 }
-
-#score-reset:hover {
-  color: #fad38c;
-  background-color: #fa89cf;
-} */

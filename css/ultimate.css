@@ -6,6 +6,11 @@ body {
   text-align: center;
 }
 
+.preSquare {
+  background-image: url("../images/dark-oak.png");
+  background-size: cover;
+}
+
 .container {
   display: flex;
   justify-content: center;

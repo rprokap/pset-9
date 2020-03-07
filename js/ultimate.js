@@ -120,10 +120,12 @@ const winningConditionsTan = [
 ]
 
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
-let board;
-let turn;
-let win;
-
+let board, turn, win, ultimateWin, element, board1Win, board2Win, board3Win;
+let board4Win, board5Win, board6Win, board7Win, board8Win, board9Win;
+let board1Done, board2Done, board3Done, board4Done, board5Done, board6Done;
+let board7Done, board8Done, board9Done;
+let nextMove = "no limit";
+let board1Win = false;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"));
 const message = document.querySelector("h2");
@@ -133,89 +135,49 @@ window.onload = init;
 document.getElementById("board").onclick = takeTurn;
 document.getElementById("reset-button").onclick = init;
 document.getElementById("o-button").onclick = oStart;
+document.getElementById("0squares").classList.remove("preSquare");
+document.getElementById("10squares").classList.remove("preSquare");
+document.getElementById("20squares").classList.remove("preSquare");
+document.getElementById("30squares").classList.remove("preSquare");
+document.getElementById("40squares").classList.remove("preSquare");
+document.getElementById("50squares").classList.remove("preSquare");
+document.getElementById("60squares").classList.remove("preSquare");
+document.getElementById("70squares").classList.remove("preSquare");
+document.getElementById("80squares").classList.remove("preSquare");
+
 ///////////////////// FUNCTIONS /////////////////////////////////////
-
 function init() {
-  board = [
-    "", "", "",
-    "", "", "",
-    "", "", ""
-  ];
-
-  board2 = [
-    "", "", "",
-    "", "", "",
-    "", "", ""
-  ];
-
-  board3 = [
-    "", "", "",
-    "", "", "",
-    "", "", ""
-  ];
-
-  board4 = [
-    "", "", "",
-    "", "", "",
-    "", "", ""
-  ];
-
-  board5 = [
-    "", "", "",
-    "", "", "",
-    "", "", ""
-  ];
-
-  board6 = [
-    "", "", "",
-    "", "", "",
-    "", "", ""
-  ];
-
-  board7 = [
-    "", "", "",
-    "", "", "",
-    "", "", ""
-  ];
-
-  board8 = [
-    "", "", "",
-    "", "", "",
-    "", "", ""
-  ];
-
-  board9 = [
-    "", "", "",
-    "", "", "",
-    "", "", ""
-  ];
-
   turn = "X";
-  win = null;
-
-  render();
-}
-
-function oStart() {
-  board = [
-    "", "", "",
-    "", "", "",
-    "", "", ""
-  ];
-
-  turn = "O";
-  win = null;
-
+  board = [];
+  for (let i = 0; i < 90; i ++){
+    if(x % 10 !== 0){
+      square[x].textContent = "";
+    }
+  }
+  for(let j = 0; j < 90; j ++){
+    if (square[0].textContent != "") {
+      square[0].textContent = "";
+      for(let k = 1; i < 10; k++) {
+        element = document.createElement("div");
+        element.setAttribute("class", "square");
+        document.getElementById(i + "squares").appendChild(element);
+      }
+    }
+  }
+  board1Win = board2Win = board3Win = board4Win = board5Win = board6Win = board7Win = board8Win = board9Win = false;
+  board1Done = board2Done = board3Done = board4Done = board5Done = board6Done = board7Done = board8Done = board9Done = false;
+  squares = Array.from(document.querySelectorAll("#board div"));
   render();
 }
 
 function render() {
   board.forEach(function(mark, index) {
     squares[index].textContent = mark;
-  });
+  })
+}
 
-  message.textContent =
-    win === "T" ? "'tis a tie" : win ? `${win} hast won` : `turn: ${turn}`;
+message.textContent =
+    win === "T" ? "'tis a tie" : win ? `${win} hast won` : `Turn: ${turn}`;
 }
 
 function takeTurn(e) {
@@ -224,38 +186,168 @@ function takeTurn(e) {
       return square === e.target;
     });
 
-    if (board[index] === "") {
+    if(nextMove = "no limit") {
+      if(square[index].textContent === ""){
+        board[index] = turn;
+        turn = turn === "X" ? "O" : "X";
+        win = getWinner();
+      }
+    }
+    if (square[index].textContent === "") {
       board[index] = turn;
       turn = turn === "X" ? "O" : "X";
       win = getWinner();
-      if (win == "X") {
-        xWin ++;
-        document.getElementById("x-wins").innerHTML = "x's wins: " + xWin;
-      } else if (win == "O") {
-        oWin ++;
-        document.getElementById("o-wins").innerHTML = "o's wins: " + oWin;
-      } else if (win == "T") {
-        ties ++;
-        document.getElementById("tie").innerHTML = "ties: " + ties;
-      }
-
+      nextMove = getNextMove(e);
       render();
     }
+  } else if (nextMove == "board1") {
+    if(board[0] != "X" && board[0] != "O" && board[0] != "T") {
+      if (index >= 1 && index <= 9) {
+        if (square[index].textContent === "") {
+          board[index] = turn;
+          turn = turn === "X" ? "O" : "X";
+          win = getWinner();
+          firstLeftWinner = getBoard1Winner(e);
+          nextMove = getNextMove(e);
+          document.getElementById("first-left").classList.remove("nextSquare");
+          nextMove = getNextMove(e);
+
+          render();
+        }
+      }
+    }
+    else {
+      nextMove = "no limit";
+    }
+  }
+  else if
   }
 }
 
-function getWinner() {
-  let winner = null;
 
-  winningConditions.forEach(function(condition, index) {
-    if (
-      board[condition[0]] &&
-      board[condition[0]] === board[condition[1]] &&
-      board[condition[1]] === board[condition[2]]
-    ) {
-      winner = board[condition[0]];
-    }
-  });
 
-  return winner ? winner : board.includes("") ? null : "T";
-}
+
+// function init() {
+//   board = [
+//     "", "", "",
+//     "", "", "",
+//     "", "", ""
+//   ];
+//
+//   board2 = [
+//     "", "", "",
+//     "", "", "",
+//     "", "", ""
+//   ];
+//
+//   board3 = [
+//     "", "", "",
+//     "", "", "",
+//     "", "", ""
+//   ];
+//
+//   board4 = [
+//     "", "", "",
+//     "", "", "",
+//     "", "", ""
+//   ];
+//
+//   board5 = [
+//     "", "", "",
+//     "", "", "",
+//     "", "", ""
+//   ];
+//
+//   board6 = [
+//     "", "", "",
+//     "", "", "",
+//     "", "", ""
+//   ];
+//
+//   board7 = [
+//     "", "", "",
+//     "", "", "",
+//     "", "", ""
+//   ];
+//
+//   board8 = [
+//     "", "", "",
+//     "", "", "",
+//     "", "", ""
+//   ];
+//
+//   board9 = [
+// //     "", "", "",
+// //     "", "", "",
+// //     "", "", ""
+// //   ];
+// //
+// //   turn = "X";
+// //   win = null;
+// //
+// //   render();
+// // }
+//
+// function oStart() {
+//   board = [
+//     "", "", "",
+//     "", "", "",
+//     "", "", ""
+//   ];
+//
+//   turn = "O";
+//   win = null;
+//
+//   render();
+// }
+//
+// function render() {
+//   board.forEach(function(mark, index) {
+//     squares[index].textContent = mark;
+//   });
+//
+//   message.textContent =
+//     win === "T" ? "'tis a tie" : win ? `${win} hast won` : `turn: ${turn}`;
+// }
+//
+// function takeTurn(e) {
+//   if (!win) {
+//     let index = squares.findIndex(function(square) {
+//       return square === e.target;
+//     });
+//
+//     if (board[index] === "") {
+//       board[index] = turn;
+//       turn = turn === "X" ? "O" : "X";
+//       win = getWinner();
+//       if (win == "X") {
+//         xWin ++;
+//         document.getElementById("x-wins").innerHTML = "x's wins: " + xWin;
+//       } else if (win == "O") {
+//         oWin ++;
+//         document.getElementById("o-wins").innerHTML = "o's wins: " + oWin;
+//       } else if (win == "T") {
+//         ties ++;
+//         document.getElementById("tie").innerHTML = "ties: " + ties;
+//       }
+//
+//       render();
+//     }
+//   }
+// }
+//
+// function getWinner() {
+//   let winner = null;
+//
+//   winningConditions.forEach(function(condition, index) {
+//     if (
+//       board[condition[0]] &&
+//       board[condition[0]] === board[condition[1]] &&
+//       board[condition[1]] === board[condition[2]]
+//     ) {
+//       winner = board[condition[0]];
+//     }
+//   });
+//
+//   return winner ? winner : board.includes("") ? null : "T";
+// }

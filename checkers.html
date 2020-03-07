@@ -2,6 +2,8 @@
 
 <html lang="en">
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- used library bc dum -->
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/minecraftia" type="text/css"/>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,97 +16,19 @@
     <title>checkers</title>
   </head>
   <body>
-    <div id = "home">
-      <a href="index.html"><img src="images/home.png"></a>
+    <div class="column">
+    <button id="cleargame">Reset Game</button>
     </div>
-    <h1>checkers</h1>
-    <div class ="container column">
-    <h2>turn: green</h2>
-    <button id = "newgame">start a new game</button>
-    <div class = "column">
-      <div id = "board">
-          <div class = "squares"></div>
-          <div class = "pieces">
-              <div class = "gpieces"></div>
-              <div class = "ppieces"></div>
-          </div>
+  </div>
+  <div class="column">
+    <div id="board">
+      <div class="tiles"></div>
+      <div class="pieces">
+        <div class="player1pieces">
+        </div>
+        <div class="player2pieces">
         </div>
       </div>
-<!--
-    <div class="container wrap" id="board">
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div>
-			<div class="acacia"></div>
-			<div class="oak"></div> -->
-    <footer>
-      <div id= "footer"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">¿what's this link?</a></div>
-    </footer>
+  </div>
   </body>
 </html>
