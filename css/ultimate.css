@@ -6,6 +6,10 @@ body {
   text-align: center;
 }
 
+/* #ultimate {
+  filter: grayscale(100%);
+} */
+
 .preSquare {
   background-image: url("../images/dark-oak.png");
   background-size: cover;
