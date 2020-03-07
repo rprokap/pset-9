@@ -18,136 +18,44 @@ h2 {
   margin: 2%;
 }
 
-#board{
-  width:690px;
-  margin:0 auto;
+#board {
+  display:flex;
+  flex-wrap: wrap;
+  width: 800px;
+  border-style: solid;
+  justify-content: center;
+  padding: 20px;
 }
 
-#outer-board{
-  width:420px;
-  height:420px;
-  margin:0 auto;
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 .column {
-  height: 100%;
-  width: 100%;
-  flex-direction: column;
+	height: 100%;
+	width: 100%;
+	flex-direction: column;
 }
 
-.wrap {
-  flex-wrap: wrap;
-  height: 456px;
-  width: 456px;
-}
-
- .square {
-   border: 1px solid #e8691b;
-   font-size: 96px;
-   color: #e8691b;
-   height: 150px;
-   line-height: 150px;
-   user-select: none;
-   width: 150px;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-image: url("../images/dark-oak.png");
-   background-size: cover;
- }
-
-.square:hover {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #fada89;
-  background-image: url("../images/tictac-minecraft.png");
-  background-size: cover;
-  cursor: pointer;
-}
-
-#footer {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-#o-wins {
-  background-color: #c7c7c7;
-  border: 1px solid #e87c7d;
-  color: #e87c7d;
-  font-size: 14px;
-  line-height: 250%;
-  text-align: center;
-  width: 33%;
-}
-
-#x-wins {
-  background-color: #00abab;
-  border: 1px solid #312876;
-  color: #312876;
-  font-size: 14px;
-  line-height: 250%;
-  margin: 1%;
-  text-align: center;
-  width: 33%;
-}
-
-#tie {
-  position: absolute;
-  right: 0px;
-  background-color: #e87c7d;
-  border: 1px solid #c7c7c7;
-  color: #c7c7c7;
-  font-size: 14px;
-  line-height: 250%;
-  text-align: center;
-  width: 33%;
+.squares {
+  	border: 1px solid rgba(0, 0, 0, 0.75);
+  	height: 100px;
+  	user-select: none;
+  	width: 100px;
+    border-radius: 50px;
+    margin: 3px 3px;
+    background-color: white;
 }
 
 #reset-button {
-  border: 1px solid #e8691b;
-  color: #c7c7c7;
-  font-size: 21px;
-  line-height: 55px;
-  margin: 1%;
-  text-align: center;
-  width: 456px;
-  background-color: #e87c7d;
-}
-
- #o-button {
-   border: 1px solid brown;
-   color: #312876;
-   font-size: 21px;
-   line-height: 55px;
-   margin: 1%;
-   text-align: center;
-   width: 456px;
-   background-color: #00abab;
- }
-
-#reset-button:hover {
-  background-color: #c7c7c7;
-  color: #e87c7d;
-  cursor: pointer;
-}
-
-  #o-button:hover {
-  background-color: #312876;
-  color: #00abab;
-  cursor: pointer;
-}
-
-#score-reset {
-  border: 1px solid #f5be78;
-  text-align: center;
-  color: #00abab;
-  background-color: #312876;
-  margin: 1%;
-  width: 50%;
-  height: 40px;
-  font-size: 28px;
-}
-
-#score-reset:hover {
-  background-color: rgb(197,113,69);
-  color: #492f17;
-  border: 1px solid #492f17;
+	background-color: white;
+	border: 1px solid black;
+	color: black;
+	font-size: 21px;
+	line-height: 55px;
+	margin: 1%;
+	text-align: center;
+	width: 456px;
 }
