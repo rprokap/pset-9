@@ -48,10 +48,19 @@ h1 {
   margin-top: 1vmin;
   margin-left: 1vmin;
   cursor: pointer;
+  background-color: rgba(232, 124, 125, 0.5);
+
 }
 
-div#board .player1pieces .piece.selected {
+.player1pieces .piece.selected {
   box-shadow: 0 0 10px 5px orange;
+}
+
+.tile .moveOption {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../images/tictac.png");
+  opacity: 0.5;
 }
 
 .player2pieces .piece {
@@ -59,6 +68,7 @@ div#board .player1pieces .piece.selected {
   width: 8vmin;
   height: 8vmin;
   background-image: url("../images/zombie.png");
+  background-color: rgba(0, 171, 171, 0.5);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 65%;

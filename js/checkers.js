@@ -72,12 +72,12 @@ window.onload = function () {
         if (newlocation[0] < this.location[0]) return false;
       } else if (this.player == 2 && this.king == false) {
         if (newlocation[0] > this.location[0]) return false;
-      }
-      if (newlocation[0] > 7 || newlocation[1] > 7 || newlocation[0] < 0 || newlocation[1] < 0) return false;
+      } if (newlocation[0] > 7 || newlocation[1] > 7 || newlocation[0] < 0 || newlocation[1] < 0) return false;
       let tileToCheckx = this.location[1] + dx / 2;
       let tileToChecky = this.location[0] + dy / 2;
-      if (tileToCheckx > 7 || tileToChecky > 7 || tileToCheckx < 0 || tileToChecky < 0) return false;
-      if (!Board.isValidPlacetoMove(tileToChecky, tileToCheckx) && Board.isValidPlacetoMove(newlocation[0], newlocation[1])) {
+      if (tileToCheckx > 7 || tileToChecky > 7 || tileToCheckx < 0 || tileToChecky < 0) {
+        return false;
+      } if (!Board.isValidPlacetoMove(tileToChecky, tileToCheckx) && Board.isValidPlacetoMove(newlocation[0], newlocation[1])) {
         for (let pieceIndex in pieces) {
           if (pieces[pieceIndex].location[0] == tileToChecky && pieces[pieceIndex].location[1] == tileToCheckx) {
             if (this.player != pieces[pieceIndex].player) {
@@ -103,8 +103,7 @@ window.onload = function () {
       if (this.player == 1) {
         $('#player2').append("<div class='capturedPiece'></div>");
         Board.score.player2 += 1;
-      }
-      if (this.player == 2) {
+      } if (this.player == 2) {
         $('#player1').append("<div class='capturedPiece'></div>");
         Board.score.player1 += 1;
       }
@@ -123,12 +122,12 @@ window.onload = function () {
     this.inRange = function (piece) {
       for (let k of pieces)
         if (k.location[0] == this.location[0] && k.location[1] == this.location[1]) return 'wrong';
-      if (!piece.king && piece.player == 1 && this.location[0] < piece.location[0]) return 'wrong';
-      if (!piece.king && piece.player == 2 && this.location[0] > piece.location[0]) return 'wrong';
-      if (distance(this.location[0], this.location[1], piece.location[0], piece.location[1]) == Math.sqrt(2)) {
-        return 'regular';
+        if (!piece.king && piece.player == 1 && this.location[0] < piece.location[0]) return 'wrong';
+        if (!piece.king && piece.player == 2 && this.location[0] > piece.location[0]) return 'wrong';
+        if (distance(this.location[0], this.location[1], piece.location[0], piece.location[1]) == Math.sqrt(2)) {
+          return 'regular';
       } else if (distance(this.location[0], this.location[1], piece.location[0], piece.location[1]) == 2 * Math.sqrt(2)) {
-        return 'jump';
+          return 'jump';
       }
     };
   }
@@ -157,8 +156,7 @@ window.onload = function () {
             if (column % 2 == 1) {
               countTiles = this.tileRender(row, column, countTiles)
             }
-          }
-          if (this.board[row][column] == 1) {
+          } if (this.board[row][column] == 1) {
             countPieces = this.playerPiecesRender(1, row, column, countPieces)
           } else if (this.board[row][column] == 2) {
             countPieces = this.playerPiecesRender(2, row, column, countPieces)
@@ -166,6 +164,7 @@ window.onload = function () {
         }
       }
     },
+
     tileRender: function (row, column, countTiles) {
       this.tilesElement.append("<div class='tile' id='tile" + countTiles + "' style='top:" + this.dictionary[row] + ";left:" + this.dictionary[column] + ";'></div>");
       tiles[countTiles] = new Tile($("#tile" + countTiles), [parseInt(row), parseInt(column)]);
@@ -182,6 +181,8 @@ window.onload = function () {
       if (row < 0 || row > 7 || column < 0 || column > 7) return false;
       if (this.board[row][column] == 0) {
         return true;
+        // tile.insertRule('strong { background: opacity: 0.5; }', sheet.cssRules.length);
+        // $(this).addClass('moveOption');
       }
       return false;
     },
@@ -189,10 +190,8 @@ window.onload = function () {
     changePlayerTurn: function () {
       if (this.playerTurn == 1) {
         this.playerTurn = 2;
-        $('.turn').css("background", "linear-gradient(to right, transparent 50%, #BEEE62 50%)");
       } else {
         this.playerTurn = 1;
-        $('.turn').css("background", "linear-gradient(to right, #BEEE62 50%, transparent 50%)");
       }
       this.check_if_jump_exist()
       return;
@@ -222,6 +221,7 @@ window.onload = function () {
 
       if (!this.jumpexist) {
         for (let k of pieces) k.allowedtomove = true;
+        // tile.insertRule('strong { background: opacity: 0.5; }', sheet.cssRules.length);
       }
     },
 
