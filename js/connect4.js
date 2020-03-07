@@ -89,7 +89,7 @@ function init() {
   "", "", "", "", "", "", "",
   "", "", "", "", "", "","",
   "", "", "", "", "", "", ""];
-  column_Count = [0, 0, 0, 0, 0, 0, 0];
+  dist = [0, 0, 0, 0, 0, 0, 0];
   turn = "Red";
   win = null;
   render();
@@ -101,11 +101,11 @@ function takeTurn(e) {
     let index = square.findIndex(function (square) {
     return square === e.target;
     });
-    let columnCount = index % 7;
-    column_Count[columnCount] = column_Count[columnCount] + 1;
+    let columns = index % 7;
+    dist[columns] = dist[columns] + 1;
     newIndex = index;
-    if (column_Count[columnCount] <= 6) {
-      newIndex = 41 - ((column_Count[columnCount]) * 7) + columnCount + 1;
+    if (dist[columns] <= 6) {
+      newIndex = 41 - ((dist[columns]) * 7) + columns + 1;
     } if (board[newIndex] === "") {
       board[newIndex] = turn;
       turn = (turn === "Red") ? "Yellow" : "Red";
