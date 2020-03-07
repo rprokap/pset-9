@@ -12,7 +12,7 @@ h1 {
   margin: 2%;
 }
 
-h2 {
+/* h2 {
   font-size: 36px;
   font-weight: lighter;
   margin: 2%;
@@ -22,7 +22,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .column {
   height: 100%;
@@ -30,13 +30,42 @@ h2 {
   flex-direction: column;
 }
 
-.wrap {
+/* .wrap {
   flex-wrap: wrap;
   height: 1216px;
   width: 1216px;
+} */
+
+#board {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 1px;
 }
 
- .oak {
+#board .square {
+  width: 6.9px;
+  height: 6.9px;
+  background-image: url("../images/dark-oak.png");
+  background-size: cover;
+}
+
+#board .gpieces {
+  position: absolute;
+  width: 4.20px;
+  height: 4.20px;
+  background-image: url("../images/zombie.png");
+  background-size: cover;
+}
+
+#board .ppieces {
+  position: absolute;
+  width: 4.20px;
+  height: 4.20px;
+  background-image: url("../images/pigman.png");
+  background-size: cover;
+}
+ /* .oak {
    border: 0px solid rgba(0, 0, 0, 0.75);
    background-image: url("../images/dark-oak.png");
    background-size: cover;
@@ -153,4 +182,4 @@ h2 {
 #score-reset:hover {
   color: #fad38c;
   background-color: #fa89cf;
-}
+} */
