@@ -33,6 +33,10 @@ h1 {
   background-position: center;
 }
 
+.tile.option {
+  background-color: rgba(73, 47, 23, 0.5));
+}
+
 .player1pieces .piece {
   position: absolute;
   width: 8vmin;

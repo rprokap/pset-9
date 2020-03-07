@@ -216,6 +216,7 @@ window.onload = function () {
         if (k.location.length != 0 && k.player == this.playerTurn && k.canJumpAny()) {
           this.jumpexist = true
           k.allowedtomove = true;
+          // $('.tile').addClass('option');
         }
       }
 
@@ -226,22 +227,22 @@ window.onload = function () {
     },
 
     str_board: function () {
-      ret = ""
+      ret = "";
       for (let i in this.board) {
         for (let j in this.board[i]) {
-          let found = false
+          let found = false;
           for (let k of pieces) {
             if (k.location[0] == i && k.location[1] == j) {
               if (k.king) ret += (this.board[i][j] + 2)
-              else ret += this.board[i][j]
-              found = true
-              break
+              else ret += this.board[i][j];
+              found = true;
+              break;
             }
           }
-          if (!found) ret += '0'
+          if (!found) ret += '0';
         }
       }
-      return ret
+      return ret;
     }
   }
 
@@ -258,6 +259,7 @@ window.onload = function () {
         });
         if (!selected) {
           $(this).addClass('selected');
+          // $('.tile').addClass('option');
         }
       }
     }
@@ -286,6 +288,7 @@ window.onload = function () {
           }
         } else if (inRange == 'regular' && !Board.jumpexist) {
           if (!piece.canJumpAny()) {
+            // $('.tile').addClass('option');
             piece.move(tile);
             Board.changePlayerTurn()
           }
