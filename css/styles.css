@@ -143,16 +143,17 @@ li{
 #score-reset {
   border: 1px solid #f5be78;
   text-align: center;
-  color: #00abab;
-  background-color: #312876;
+  background-color: rgb(197,113,69);
+  color: #492f17;
   margin: 1%;
   width: 50%;
   height: 40px;
   font-size: 28px;
+  border: 1px solid #492f17;
 }
 
 #score-reset:hover {
-  background-color: rgb(197,113,69);
-  color: #492f17;
-  border: 1px solid #492f17;
+  color: #00abab;
+  background-color: #312876;
+  border: 1px solid #00abab;
 }
