@@ -49,7 +49,7 @@ function piece(location) {
   }
   piece.move = function(square) {
     this.removeClass("pieceBeingMoved");
-    //piece move func
+    //piece move function
   }
 }
 
