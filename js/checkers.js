@@ -1,3 +1,13 @@
+//some js logic / explanations from:
+//(author unknown, n.d.) http://math.hws.edu/javanotes/c7/s5.html "Two-dimensional Arrays"
+//Pietschmann, Chris. 2015, Sep 5 https://pietschsoft.com/post/2015/09/05/javascript-basics-how-to-create-a-dictionary-with-keyvalue-pairs "JavaScript Basics: How to create a Dictionary with Key/Value pairs"
+let pieces = [];
+let tiles = [];
+
+let distance = function (x1, y1, x2, y2) {
+  return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
+}
+
 window.onload = function () {
     let gameBoard = [
     [0, 1, 0, 1, 0, 1, 0, 1],
@@ -10,31 +20,33 @@ window.onload = function () {
     [2, 0, 2, 0, 2, 0, 2, 0]
   ];
 
-  let pieces = [];
-  let tiles = [];
-
-  let distance = function (x1, y1, x2, y2) {
-    return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
-  }
-
   function Piece(element, location) {
     this.allowedtomove = true;
     this.element = element;
     this.location = location;
     this.player = '';
-    if (this.element.attr("id") < 12)
+    if (this.element.attr("id") < 12) {
       this.player = 1;
-    else
+    } else {
       this.player = 2;
+    }
     this.king = false;
     this.makeKing = function () {
       if (this.player == 1) {
             this.element.css("backgroundImage", "url('images/pking.png')");
-      }else if (this.player == 2) {
+      } else if (this.player == 2) {
             this.element.css("backgroundImage", "url('images/zking.png')");
       }
       this.king = true;
     }
+
+    this.canJumpAny = function () {
+      return (this.jumpPossible([this.location[0] + 2, this.location[1] + 2]) ||
+        this.jumpPossible([this.location[0] + 2, this.location[1] - 2]) ||
+        this.jumpPossible([this.location[0] - 2, this.location[1] + 2]) ||
+        this.jumpPossible([this.location[0] - 2, this.location[1] - 2]))
+    };
+
     this.move = function (tile) {
       this.element.removeClass('selected');
       if (!Board.isValidPlacetoMove(tile.location[0], tile.location[1])) return false;
@@ -51,13 +63,6 @@ window.onload = function () {
       if (!this.king && (this.location[0] == 0 || this.location[0] == 7))
         this.makeKing();
       return true;
-    };
-
-    this.canJumpAny = function () {
-      return (this.jumpPossible([this.location[0] + 2, this.location[1] + 2]) ||
-        this.jumpPossible([this.location[0] + 2, this.location[1] - 2]) ||
-        this.jumpPossible([this.location[0] - 2, this.location[1] + 2]) ||
-        this.jumpPossible([this.location[0] - 2, this.location[1] - 2]))
     };
 
     this.jumpPossible = function (newlocation) {
