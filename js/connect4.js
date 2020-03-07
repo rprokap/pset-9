@@ -4,7 +4,7 @@ let win;
 
 const square = Array.from(document.querySelectorAll("#board div"));
 const message = document.querySelector("h2");
-
+const greenPiece = document.getElementById("z-audio");
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
 document.getElementById("reset-button").onclick = playAgain;
@@ -107,7 +107,6 @@ function render() {
 }
 
 function takeTurn(e) {
-
   if (e.target.id == "board") {
     return false;
   }
