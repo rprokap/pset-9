@@ -10,6 +10,10 @@ let win;
 let geoTrigGarbage = function (x, y, x2, y2) {
   return ((((x-x2)^2)+()(y-y2)^2))^(1/2));
 }
+let location;
+let hDistance;
+let vDistance;
+
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"));
 const message = document.querySelector("h2");
@@ -28,11 +32,39 @@ let board = [
   ["", "p","", "p", "", "p", "", "p"],
   ["p","", "p", "", "p", "", "p", ""],
 ];
-// function checkersCircleThing {
-//   [piece garbage]
-// }
 
+function piece(location) {
+  piece.space = true;
+  piece.location = location;
+  piece.turn;
+  if (piece.attr("id") < 12) {
+    piece.turn = "g";
+  } else {
+    piece.turn = "p";
+  }
+  piece.kinged = false;
+  piece.king = function() {
+    piece.css("backgroundImage", "url(piece.turn + "king.png")");
+    piece.kinged = true;
+  }
+  piece.move = function(square) {
+    this.removeClass("pieceBeingMoved");
+    //piece move func
+  }
+}
 
+piece.jumpOptions = function (squareMovedTo) {
+  hDistance = squareMovedTo[1] - piece.location[1];
+  vDistance = squareMovedTo[0] - piece.location[0];
+}
+
+piece.puedoIr = function () {
+  //can the piece move according to jumpOptions
+}
+
+// make pieces and board
+//make piece delete when removed
+// king function
 ///TIC-TAC-TOE CODE///
 // function init() {
 //   turn = "g";
