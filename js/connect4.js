@@ -1,14 +1,13 @@
-let newIndex;
 let board;
-let turn = "Red";
+let turn;
 let win;
-let dist = [];
 
 const square = Array.from(document.querySelectorAll("#board div"));
 const message = document.querySelector("h2");
+
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
-document.getElementById("reset-button").onclick = init;
+document.getElementById("reset-button").onclick = playAgain;
 
 const winningConditions = [
   [0, 1, 2, 3],
@@ -82,53 +81,106 @@ const winningConditions = [
   [3, 11, 19, 27],
 ];
 
+
 function init() {
-  board = ["", "", "", "", "", "", "",
-  "", "", "", "", "", "", "",
-  "", "", "", "", "", "", "",
-  "", "", "", "", "", "", "",
-  "", "", "", "", "", "","",
-  "", "", "", "", "", "", ""];
-  dist = [0, 0, 0, 0, 0, 0, 0];
-  turn = "Red";
-  win = null;
+  board = [
+    "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "",
+  ];
+  turn = "zombie"
+  win = null
+
   render();
 }
 
+function render() {
+  board.forEach(function(mark, index) {
+    square[index].textContent = mark;
+  });
+
+  message.textContent =
+    win === "T" ? "'tis'a tie!" : win ? `${win} hast won` : `turn: ${turn}`;
+}
 
 function takeTurn(e) {
+
+  if (e.target.id == "board") {
+    return false;
+  }
   if (!win) {
-    let index = square.findIndex(function (square) {
-    return square === e.target;
+    let index = square.findIndex(function(square) {
+      return square === e.target;
     });
-    let columns = index % 7;
-    dist[columns] = dist[columns] + 1;
-    newIndex = index;
-    if (dist[columns] <= 6) {
-      newIndex = 41 - ((dist[columns]) * 7) + columns + 1;
-    } if (board[newIndex] === "") {
-      board[newIndex] = turn;
-      turn = (turn === "Red") ? "Yellow" : "Red";
+
+    let row1 = index % 7;
+    if (board[index] === "") {
+      while (board[index + 7] === "") {
+        let i = index + 7;
+        document.getElementById("square" + i + "").classList.add(turn);
+        board[i] = turn;
+        document.getElementById("square" + index + "").classList.remove(turn);
+        board[index] = "";
+        index = i;
+      } if (board[index] === "") {
+        document.getElementById("square" + index + "").classList.add(turn);
+        board[index] = turn;
+        }
+      }
+      else if (board[index] !== "") {
+        if (board[row1] === "") {
+          while (board[row1 + 7] === "") {
+            let i = row1 + 7;
+            document.getElementById("square" + i + "").classList.add(turn);
+            board[i] = turn;
+            document.getElementById("square" + row1 + "").classList.remove(turn);
+            board[row1] = "";
+            row1 = i;
+          }
+          if (board[row1] === "") {
+            document.getElementById("square" + row1 + "").classList.add(turn);
+            board[row1] = turn;
+          }
+        }
+      }
+      if (board[row1] !== "") {
+        return false;
+      }
+    }
+      turn = turn === "zombie" ? "pigman" : "zombie";
       win = getWinner();
       render();
-    } if (win === "T") {
-      tieScore++;
-      document.getElementById("thirdList").innerHTML = tieScore;
-  }
-}
-}
+    }
 
 function getWinner() {
   let winner = null;
-  winningConditions.forEach(function (condition, index) {
-  if (
-    board[condition[0]] &&
-    board[condition[0]] === board[condition[1]] &&
-    board[condition[1]] === board[condition[2]] &&
-    board[condition[2]] === board[condition[3]]
-  ) {
-  winner = board[condition[0]];
-  }
-});
+
+  winningConditions.forEach(function(condition, index) {
+    if (
+      board[condition[0]] &&
+      board[condition[0]] === board[condition[1]] &&
+      board[condition[1]] === board[condition[2]] &&
+      board[condition[2]] === board[condition[3]]
+    ) {
+      winner = board[condition[0]];
+    }
+  });
+
   return winner ? winner : board.includes("") ? null : "T";
+}
+
+function playAgain() {
+
+  board.forEach(function(mark, index) {
+    if (square[index].classList.contains("zombie")) {
+      square[index].classList.remove("zombie")
+    }
+    if (square[index].classList.contains("pigman")) {
+      square[index].classList.remove("pigman")
+    }
+  });
+  init()
 }

@@ -41,13 +41,21 @@ h2 {
   align-items: center;
 }
 
-.red {
-  background-color: #ed3b3b;
+.zombie {
   color: transparent;
+  background-image: url("../images/zombie.png");
+  background-color: rgba(0, 171, 171, 0.5);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-.yellow {
-  background-color: #f5ef38;
+.pigman {
+  background-image: url("../images/pigman.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(232, 124, 125, 0.5);
   color: transparent;
 }
 
