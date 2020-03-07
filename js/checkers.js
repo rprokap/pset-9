@@ -33,6 +33,15 @@ let board = [
   ["p","", "p", "", "p", "", "p", ""],
 ];
 
+let canMove = function(row, column) {
+  if(piece.board[row][column] == 0) {
+    return true;
+  } if (row < 0 || row > 7 || column < 0 || column > 7) {
+    return false;
+  }
+  return false;
+}
+
 function piece(location) {
   piece.space = true;
   piece.location = location;
@@ -49,7 +58,7 @@ function piece(location) {
   }
   piece.move = function(square) {
     this.removeClass("pieceBeingMoved");
-    //piece move function
+    if(!Board.)
   }
 }
 
