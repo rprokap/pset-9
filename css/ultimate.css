@@ -3,7 +3,7 @@
 }
 
 body {
-  text-align: center;
+  text-align: left;
 }
 
 /* #ultimate {
@@ -17,8 +17,8 @@ body {
 
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: right;
+  align-items: right;
 }
 
 .column {
@@ -65,7 +65,7 @@ body {
   font-size: 21px;
   line-height: 55px;
   margin: 1%;
-  text-align: center;
+  text-align: left;
   width: 456px;
   background-color: #96e0d9;
 }
@@ -77,7 +77,7 @@ body {
    font-size: 21px;
    line-height: 55px;
    margin: 1%;
-   text-align: center;
+   text-align: right;
    width: 456px;
    background-color: #e096c6;
  }
@@ -96,7 +96,7 @@ body {
 
 #score-reset {
   border: 1px solid #f5be78;
-  text-align: center;
+  text-align: left;
   color: #2c3d3c;
   background-color: #8bc5f7;
   margin: 1%;
